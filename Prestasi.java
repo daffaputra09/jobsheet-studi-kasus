@@ -99,7 +99,22 @@ public class Prestasi {
         }
     }
 
-    static void analisisPrestasi() {
+static void analisisPrestasi() {
+        System.out.print("Masukkan Jenis Prestasi untuk Analisis: ");
+        String jenisAnalisis = scanner.nextLine();
+        boolean ditemukan = false;
 
+        System.out.println("\n=== ANALISIS PRESTASI ===");
+        for (int i = 0; i < jumlahPrestasi; i++) {
+            if (prestasiList[i][2].equalsIgnoreCase(jenisAnalisis)) {
+                System.out.printf("Nama: %s | NIM: %s | Tingkat: %s | Tahun: %s%n",
+                prestasiList[i][0], prestasiList[i][1], prestasiList[i][3], prestasiList[i][4]);
+                ditemukan = true;
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Tidak ada data prestasi dengan jenis tersebut.");
+        }
     }
 }
