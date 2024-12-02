@@ -84,37 +84,35 @@ public class Prestasi {
         prestasiList[jumlahPrestasi][4] = tahun;
 
         jumlahPrestasi++;
-        System.out.println("Data prestasi berhasil ditambahkan.");
+        System.out.println("\n===== DATA PRESTASI BERHASIL DITAMBAHKAN =====\n");
     }
 
     static void tampilkanSemuaPrestasi() {
         if (jumlahPrestasi == 0) {
-            System.out.println("Belum ada data prestasi.");
+            System.out.println("\n===== BELUM ADA DATA PRESTASI =====\n");
         } else {
             System.out.println("\n=== DAFTAR PRESTASI MAHASISWA ===");
             for (int i = 0; i < jumlahPrestasi; i++) {
-                System.out.printf("Nama: %s | NIM: %s | Jenis: %s | Tingkat: %s | Tahun: %s%n",
-                prestasiList[i][0], prestasiList[i][1], prestasiList[i][2], prestasiList[i][3], prestasiList[i][4]);
+                System.out.println("Nama: " + prestasiList[i][0] + " | NIM: " + prestasiList[i][1] + " | Jenis: " + prestasiList[i][2] + " | Tingkat: " + prestasiList[i][3] + " | Tahun: " + prestasiList[i][4]);
             }
         }
     }
 
-static void analisisPrestasi() {
+    static void analisisPrestasi() {
         System.out.print("Masukkan Jenis Prestasi untuk Analisis: ");
         String jenisAnalisis = scanner.nextLine();
         boolean ditemukan = false;
 
-        System.out.println("\n=== ANALISIS PRESTASI ===");
+        System.out.println("\n=== ANALISIS PRESTASI ===\n");
         for (int i = 0; i < jumlahPrestasi; i++) {
             if (prestasiList[i][2].equalsIgnoreCase(jenisAnalisis)) {
-                System.out.printf("Nama: %s | NIM: %s | Tingkat: %s | Tahun: %s%n",
-                prestasiList[i][0], prestasiList[i][1], prestasiList[i][3], prestasiList[i][4]);
+                System.out.println("Nama: " + prestasiList[i][0] + " | NIM: " + prestasiList[i][1] + " | Tingkat: " + prestasiList[i][3] + " | Tahun: " + prestasiList[i][4]);
                 ditemukan = true;
             }
         }
 
         if (!ditemukan) {
-            System.out.println("Tidak ada data prestasi dengan jenis tersebut.");
+            System.out.println("===== TIDAK ADA DATA PRESTASI DENGAN JENIS TERSEBUT =====");
         }
     }
 }
