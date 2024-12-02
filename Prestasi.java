@@ -48,16 +48,16 @@ public class Prestasi {
     }
 
     static void tambahPrestasi() {
-        String tingkat, tahun;
+        String nama, nim, jenis, tingkat, tahun;
 
         System.out.print("Masukkan Nama Mahasiswa: ");
-        prestasiList[jumlahPrestasi][0] = scanner.nextLine();
+        nama = scanner.nextLine();
 
         System.out.print("Masukkan NIM Mahasiswa: ");
-        prestasiList[jumlahPrestasi][1] = scanner.nextLine();
+        nim = scanner.nextLine();
 
         System.out.print("Masukkan Jenis Prestasi: ");
-        prestasiList[jumlahPrestasi][2] = scanner.nextLine();
+        jenis = scanner.nextLine();
 
         do {
             System.out.print("Masukkan Tingkat Prestasi (Lokal/Nasional/Internasional): ");
@@ -69,8 +69,6 @@ public class Prestasi {
 
         } while (!tingkat.equalsIgnoreCase("Lokal") && !tingkat.equalsIgnoreCase("Nasional") && !tingkat.equalsIgnoreCase("Internasional"));
 
-        prestasiList[jumlahPrestasi][3] = tingkat;
-
         do {
             System.out.print("Masukkan Tahun Prestasi (2010 hingga tahun saat ini): ");
             tahun = scanner.nextLine();
@@ -81,6 +79,10 @@ public class Prestasi {
 
         } while (Integer.parseInt(tahun) < 2010 || Integer.parseInt(tahun) > 2024);
         
+        prestasiList[jumlahPrestasi][0] = nama;
+        prestasiList[jumlahPrestasi][1] = nim;
+        prestasiList[jumlahPrestasi][2] = jenis;
+        prestasiList[jumlahPrestasi][3] = tingkat;
         prestasiList[jumlahPrestasi][4] = tahun;
 
         jumlahPrestasi++;
