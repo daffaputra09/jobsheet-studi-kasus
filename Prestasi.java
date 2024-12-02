@@ -48,7 +48,8 @@ public class Prestasi {
     }
 
     static void tambahPrestasi() {
-        String nama, nim, jenis, tingkat, tahun;
+        String nama, nim, jenis, tingkat;
+        int tahun;
 
         System.out.print("Masukkan Nama Mahasiswa: ");
         nama = scanner.nextLine();
@@ -71,19 +72,19 @@ public class Prestasi {
 
         do {
             System.out.print("Masukkan Tahun Prestasi (2010 hingga tahun saat ini): ");
-            tahun = scanner.nextLine();
+            tahun = scanner.nextInt();
 
-            if (Integer.parseInt(tahun) < 2010 || Integer.parseInt(tahun) > 2024) {
+            if (tahun < 2010 || tahun > 2024) {
                 System.out.println("Input tidak valid. Masukkan kembali tahun prestasi.");
             }
 
-        } while (Integer.parseInt(tahun) < 2010 || Integer.parseInt(tahun) > 2024);
+        } while (tahun < 2010 || tahun > 2024);
         
         prestasiList[jumlahPrestasi][0] = nama;
         prestasiList[jumlahPrestasi][1] = nim;
         prestasiList[jumlahPrestasi][2] = jenis;
         prestasiList[jumlahPrestasi][3] = tingkat;
-        prestasiList[jumlahPrestasi][4] = tahun;
+        prestasiList[jumlahPrestasi][4] = String.valueOf(tahun);
 
         jumlahPrestasi++;
         System.out.println("\n===== DATA PRESTASI BERHASIL DITAMBAHKAN =====\n");
