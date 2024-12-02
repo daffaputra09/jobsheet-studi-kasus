@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
 public class Prestasi {
-
     static int jumlahPrestasi = 0;
     static Scanner scanner = new Scanner(System.in);
-
+    
     static String[][] prestasiList = new String[100][5];
     // DOKUMENTASI KOLOM ARRAY
     // 0 = Nama
@@ -89,7 +88,15 @@ public class Prestasi {
     }
 
     static void tampilkanSemuaPrestasi() {
-
+        if (jumlahPrestasi == 0) {
+            System.out.println("Belum ada data prestasi.");
+        } else {
+            System.out.println("\n=== DAFTAR PRESTASI MAHASISWA ===");
+            for (int i = 0; i < jumlahPrestasi; i++) {
+                System.out.printf("Nama: %s | NIM: %s | Jenis: %s | Tingkat: %s | Tahun: %s%n",
+                prestasiList[i][0], prestasiList[i][1], prestasiList[i][2], prestasiList[i][3], prestasiList[i][4]);
+            }
+        }
     }
 
     static void analisisPrestasi() {
