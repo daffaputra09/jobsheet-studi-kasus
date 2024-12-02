@@ -4,7 +4,7 @@ public class Prestasi {
     static int jumlahPrestasi = 0;
     static Scanner scanner = new Scanner(System.in);
     
-    static String[][] prestasiList = new String[Integer.MAX_VALUE][5];
+    static String[][] prestasiList = new String[100][5];
     // DOKUMENTASI KOLOM ARRAY
     // 0 = Nama
     // 1 = NIM
